@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap;" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital@0;1&display=swap" rel="stylesheet">
+    <!--Boldonse font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Winky+Sans:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <!--open sans font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Winky+Sans:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <title>FREEZE! - We sell ice to Eskimo.</title>
+    <link rel="stylesheet" href="design.css">
+  </head>
+  <body onload="sessionCheck()">
+    <div class="container">      
+       <nav>
+            <a href="homepage.html" class="freeze-brand nosifer-regular">FREEZE!</a>
+            <ul class="freeze-menu">               
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="order_history.html" class="secure-option">Order History</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="cart.html" class="secure-option">Cart</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+
+        <div class="f-contact"> 
+          <div class="f-contact-contents">                        
+                <h3 class="f-title-big boldonse-regular">Lets Chat</h3>
+          </div>
+          <div class="f-contact-contents-body">                        
+            <p>📞  Stay Cool with Frosty Delights! ❄️🍓
+              At Frosty Delights, we love hearing from our customers! Whether you have 
+              questions about our ice products, fruity pops, bulk orders, or delivery services, 
+              we’re here to help. Reach out to us for any inquiries, special requests, or feedback – we’d be happy to assist you!</p>
+              <span>📍 Visit Us:</span>
+                <ul>
+                  <li>123 Home St.</li>
+                  <li>Montego Bay, St. James</li>
+                </ul>
+
+                <span>📧 Email Us:</span>
+                <ul>
+                  <li>General Inquiries: info@freeze.com</li>
+                  <li>Orders & Deliveries: orders@myorder.com</li>
+                </ul>
+
+                <span>📞 Call Us:</span>
+                <ul>
+                  <li>Customer Support: 123-456-789</li>
+                  <li>Business Inquiries: 800-789-1111</li>
+                </ul>
+
+                <span>🕒 Business Hours:</span>
+                <ul>
+                  <li>Monday – Friday: 8:00 AM – 6:00 PM</li>
+                  <li>Saturday – Sunday: 9:00 AM – 4:00 PM</li>
+                </ul>
+
+                <span>🌍 Follow Us on Social Media:</span>
+                <ul>
+                  <li>📸 Instagram: @freeze</li>
+                  <li>📘 Facebook: @freeze</li>
+                  <li>Twitter: @freeze_icecompany</li>
+                </ul>              
+              <p>
+              For quick responses, feel free to call or email us directly. If you’d like to place a bulk order or 
+              schedule an ice delivery, simply send us a message, and we’ll get back to you as soon as possible. Thank you for choosing 
+              Frosty Delights – keeping you cool, one icy treat at a time! ❄️🍉🍍
+              </p>
+  
+              </div>
+        </div>
+         
+    </div>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const user = sessionStorage.getItem('current_user');
+        console.log("Logged in user " + user)
+        if (!user) {
+          window.location.href = 'login.html'
+        } else {            
+          document.documentElement.style.setProperty('--hidden-options', 'block')
+        }
+      })
+     </script>
+  </body>
+</html>
+
+
+

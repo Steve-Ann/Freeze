@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap;" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital@0;1&display=swap" rel="stylesheet">
+    <!--Boldonse font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Winky+Sans:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <!--open sans font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Winky+Sans:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <!--open rubik font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Winky+Sans:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <title>FREEZE! - We sell ice to Eskimo.</title>
+    <link rel="stylesheet" href="design.css">
+  </head>
+  <body class="rubik">
+    <div class="container">      
+      <nav>
+        <a href="secure_homepage.html" class="freeze-brand nosifer-regular">FREEZE!</a>
+        <ul class="freeze-menu">               
+            <li><a href="secure_homepage.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="order_history.html">Order History</a></li> 
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+            <li><a href="cart.html">Cart</a></li> 
+        </ul>
+      </nav><!--nav/menu end-->
+      <div class="p-contents">
+        <h2 class="f-title-big boldonse-regular" style="text-align: center;">Order History</h2>
+        <label for="search" class="p-contents">Search by Order Number </label>
+        <input type="text" id="search" placeholder="Enter order number" onkeyup="searchOrder()">
+        <table id="orderTable" class="p-contents">
+            <thead>
+                <tr>
+                    <th>Order Number</th>
+                    <th>Date</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ORD001</td>
+                    <td>2025-03-15</td>
+                    <td>Crushed Ice (80 lbs)</td>
+                    <td>$329.99</td>
+                    <td><button class="btn" onclick="viewOrder('ORD001', '2025-03-15', 'Crushed Ice (80 lbs)', '$329.99')">View Order</button></td>
+                </tr>
+                <tr>
+                    <td>ORD002</td>
+                    <td>2025-03-16</td>
+                    <td>Fruity Pops (Strawberry, 10 pack)</td>
+                    <td>$300.99</td>
+                    <td><button class="btn" onclick="viewOrder('ORD002', '2025-03-16', 'Fruity Pops (Strawberry)', '$300.99')">View Order</button></td>
+                </tr>
+                <tr>
+                    <td>ORD003</td>
+                    <td>2025-03-17</td>
+                    <td>Ice Block (300 lbs)</td>
+                    <td>$445.99</td>
+                    <td><button class="btn" onclick="viewOrder('ORD003', '2025-03-17', 'Ice Block (300 lbs)', '$445.99')">View Order</button></td>
+                </tr>
+                <tr>
+                    <td>ORD004</td>
+                    <td>2025-03-18</td>
+                    <td>Fruity Pops (Mango, 10 pack)</td>
+                    <td>$300.99</td>
+                    <td><button class="btn" onclick="viewOrder('ORD004', '2025-03-18', 'Fruity Pops (Mango)', '$300.99')">View Order</button></td>
+                </tr>
+                <tr>
+                    <td>ORD005</td>
+                    <td>2025-03-19</td>
+                    <td>Crushed Ice (150 lbs)</td>
+                    <td>$750.99</td>
+                    <td><button class="btn" onclick="viewOrder('ORD005', '2025-03-19', 'Crushed Ice  (150 lbs)', '$750.99')">View Order</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <script>
+        function searchOrder() {
+            let input = document.getElementById("search").value.toUpperCase();
+            let table = document.getElementById("orderTable");
+            let tr = table.getElementsByTagName("tr");
+            
+            for (let i = 1; i < tr.length; i++) {
+                let tdOrder = tr[i].getElementsByTagName("td")[0];
+                let tdDate = tr[i].getElementsByTagName("td")[1];
+                if (tdOrder || tdDate) {
+                    let orderText = tdOrder.textContent || tdOrder.innerText;
+                    let dateText = tdDate.textContent || tdDate.innerText;
+                    if (orderText.toUpperCase().indexOf(input) > -1 || dateText.toUpperCase().indexOf(input) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }       
+            }
+        }
+
+        function viewOrder(orderNumber, orderDate, orderProduct, orderTotal) {
+            alert("Viewing details and invoice for Order: " + orderNumber);            
+            const data = [];
+            data[0] = orderNumber
+            data[1] = orderDate
+            data[2] = orderProduct
+            data[3] = orderTotal
+            sessionStorage.setItem('data', JSON.stringify(data))
+            window.location.href = 'invoice.html'
+        }
+    </script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+          const user = sessionStorage.getItem('current_user');
+          console.log("Logged in user " + user)
+          if (!user) {
+            window.location.href = 'login.html'
+          } else {            
+            document.documentElement.style.setProperty('--hidden-options', 'block')
+          }
+        })
+       </script>
+    <footer>
+      <div class="foot-note">
+        <div><strong>Location:</strong><br />
+          <i>123 Home St.</i><br />
+          <i>Montego Bay, St. James<i></i><br />
+          </div>
+        </div>
+   </footer><!--footer end-->
+</body>
+</html>

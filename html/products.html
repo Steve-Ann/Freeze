@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap;" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital@0;1&display=swap" rel="stylesheet">
+    <!--Boldonse font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Winky+Sans:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <!--open sans font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Winky+Sans:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <!--open rubik font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Winky+Sans:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <title>FREEZE! - We sell ice to Eskimo.</title>
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="product_style.css">
+  </head>
+  <body class="rubik">    
+
+    <aside class="cart-sidebar" id="cart">
+        <h2>Your Cart (<span id="cart-count">0</span>)</h2>
+        <div id="cart-items"></div>
+        <p>Total: <strong>$<span id="cart-total">0.00</span></strong></p>
+        <button class="btn btn-primary" id="checkout-btn">Checkout</button>
+    </aside>
+
+    <div class="container">      
+      <nav>
+        <a href="homepage.html" class="freeze-brand nosifer-regular">FREEZE!</a>
+
+        <ul class="freeze-menu">               
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>            
+            <li><a href="order_history.html" class="secure-option">Order History</a></li> 
+            <li><a href="cart.html" class="secure-option" >Cart</a></li> 
+            <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav><!--nav/menu end-->
+
+      <div class="p-contents">
+ 
+        <div><h1 class="f-title-big boldonse-regular" style="text-align: center;">Select an item</h1>
+          <button id="cart-toggle" style="width: 180px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3493f2" class="bi bi-bag-heart-fill" viewBox="0 0 16 16">
+              <path d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+            </svg>
+          <span class="boldonse-regular">View Cart</span></button>
+        </div>
+        <main class="product-grid" id="products-container"></main>
+      </div>    
+    </div><!--container end-->
+    <!--<footer>
+      <div class="foot-note">
+        <div><strong>Location:</strong><br />
+          <i>123 Home St.</i><br />
+          <i>Montego Bay, St. James<i></i><br />
+          </div>
+        </div>
+    </footer>--><!--footer end-->    
+    <script src="cart.js"></script> 
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const user = sessionStorage.getItem('current_user');
+        console.log("Logged in user " + user)
+        if (!user) {
+          window.location.href = 'login.html'
+        } else {            
+          document.documentElement.style.setProperty('--hidden-options', 'block')
+        }
+      });
+
+      document.getElementById('cart-toggle').addEventListener('click', () => {
+        this.toggleCart();
+      });
+
+      function toggleCart() {
+        const cart = document.getElementById('cart');        
+        const toggleBtn = document.getElementById('cart-toggle');
+
+        cart.classList.toggle('visible');
+        toggleBtn.textContent = cart.classList.contains('visible') ? 'Hide Cart' : 'Show Cart';
+      }
+
+
+
+     </script>
+  </body>
+</html>

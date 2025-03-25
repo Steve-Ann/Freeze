@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap;" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital@0;1&display=swap" rel="stylesheet">
+    <!--Boldonse font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Winky+Sans:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <!--open sans font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Winky+Sans:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <title>FREEZE! - We sell ice to Eskimo.</title>
+    <link rel="stylesheet" href="design.css">
+
+    
+  </head>
+  <body class="rubik">
+    <div class="container">      
+       <nav>
+            <a href="homepage.html" class="freeze-brand nosifer-regular">FREEZE!</a>
+            <ul class="freeze-menu">               
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="order_history.html" class="secure-option" id="about-order-history">Order History</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="cart.html" class="secure-option" id="about-cart" onload="loadImage()">Cart</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+       <div class="f-about"> 
+          <div class="f-about-contents">                        
+                <h3 class="f-title-big boldonse-regular">About Freeze</h3>
+          </div>
+          <div class="f-about-contents-body">                        
+            <p>At Frosty Delights, we specialize in providing premium ice products and fruity pops to keep you refreshed and satisfied. Our company is dedicated to delivering high-quality, long-lasting ice blocks, crushed ice, and a variety of delicious fruit-based popsicles. Whether you're looking for the perfect way to cool down on a hot day or need bulk ice for commercial use, we’ve got you covered.</br></br>
+
+              Our fruity ice pops are crafted using real fruit juices and natural ingredients, making them a healthier and tastier alternative to traditional frozen treats. We believe in creating flavorful, refreshing, and nutritious options that both kids and adults can enjoy. From tropical mango and tangy citrus to classic berry blends, our wide range of flavors ensures there's something for everyone.</br></br>
+
+              In addition to our fruity pops, we supply crushed ice and ice blocks for various needs, including food preservation, event catering, and beverage cooling. Our ice products are purified and crystal-clear, ensuring they maintain freshness while enhancing the presentation of drinks and seafood displays. Businesses, restaurants, and event planners rely on our ice to keep their products at the perfect temperature.</br></br>
+
+              At Frosty Delights, quality and customer satisfaction are at the heart of everything we do. We pride ourselves on efficient delivery services, ensuring that customers receive their ice and frozen treats exactly when they need them. Whether you’re hosting a summer gathering, running a restaurant, or stocking up for a convenience store, our reliable supply chain guarantees freshness and convenience.</br></br>
+
+              As a company, we are committed to sustainability and innovation. We strive to minimize our environmental impact by using eco-friendly packaging and responsible sourcing of ingredients. Our goal is to continue expanding our product line with more delicious and sustainable frozen treats while maintaining the high standards our customers have come to love. Choose Frosty Delights for the coolest and most refreshing experience! ❄️🍓🍊</br></br>
+            </p>
+          </div>
+      </div>          
+    </div>
+    <footer>
+      <div class="foot-note">
+        <div><strong>Location:</strong><br />
+          <i>123 Home St.</i><br />
+          <i>Montego Bay, St. James<i></i><br />
+          </div>
+        </div>
+    </footer><!--footer end--> 
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const user = sessionStorage.getItem('current_user');
+        console.log("Logged in user " + user)
+        if (!user) {
+          window.location.href = 'login.html'
+        } else {            
+          document.documentElement.style.setProperty('--hidden-options', 'block')
+        }
+      })
+     </script>
+  </body>
+</html>
+
+
+
+
